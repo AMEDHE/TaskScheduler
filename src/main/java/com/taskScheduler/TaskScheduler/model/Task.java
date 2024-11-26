@@ -2,6 +2,7 @@ package com.taskScheduler.TaskScheduler.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,26 +14,26 @@ public class Task {
     @Id
     private int id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "due_date")
-    private Date dueDate;
+    @Column(name = "dueDate")
+    private LocalDateTime dueDate;
 
     @Column(name = "priority")
     private int priority;
 
-    @Column(name = "recurring_type")
+    @Column(name = "recurringType")
     private RecurringType recurringType; //enum
 
-    @Column(name = "created_At")
-    private Date createdAt;
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
 
-    @Column(name = "updated_At")
-    private Date updatedAt;
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
 
     @Column(name = "status")
     private Status status;

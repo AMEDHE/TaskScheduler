@@ -1,7 +1,12 @@
 package com.taskScheduler.TaskScheduler.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,21 +24,23 @@ public class User {
     private long id;
 
     @Column(name = "email")
+    @Email
     private String email;
 
     @Column(name = "username")
+    @NotBlank
     private String username;
 
     @Column(name = "name")
+    @NotNull
     private String name;
 
     @Column(name = "created_at")
-    private Date createdAt;
-
-    @Column(name = "updated_at")
-    private Date updatedAt;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime createdAt;
 
     @Column(name = "password")
+    @NotBlank
     private String password;
 
     private Set<Role> roles = new HashSet<>();
