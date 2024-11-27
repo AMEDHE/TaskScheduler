@@ -12,7 +12,10 @@ public class Task {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private int id;
+    private long id;
+
+    @Column(name = "userId")
+    private long userId;
 
     @Column(name = "name")
     private String name;
@@ -24,7 +27,7 @@ public class Task {
     private LocalDateTime dueDate;
 
     @Column(name = "priority")
-    private int priority;
+    private long priority;
 
     @Column(name = "recurringType")
     private RecurringType recurringType; //enum

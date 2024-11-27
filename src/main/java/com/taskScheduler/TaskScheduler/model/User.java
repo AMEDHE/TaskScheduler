@@ -2,6 +2,7 @@ package com.taskScheduler.TaskScheduler.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Data
 @Table(name = "user",
     uniqueConstraints = {
         @UniqueConstraint(columnNames = "username"),
